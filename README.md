@@ -1,1 +1,0 @@
-# weels_of_fortune
