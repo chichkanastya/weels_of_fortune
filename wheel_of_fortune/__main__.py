@@ -3,11 +3,7 @@ from file_handler import get_random_word
 from game import live
 from game import coded
 from decorators import timee
-# print("ПОЛЕ ЧУДЕС\nВаш лучший рекорд: 0\nВыберите уровень сложности:\n1. Легкий (7 жизней)\n2. Средний (5 жизней)\n3. Сложный (3 жизни)")
-# difficulty = int(input("Ваш выбор: "))
-# attempts = {1: 7, 2: 5, 3: 3}[difficulty]
-#print(len(get_random_word("C:Users/chich/OneDrive/Рабочий стол/wheel_of_fortune/data/words.txt"))*"\u25A0")
-print('Это Поле Чудес! Удачной игры!')
+print('=== ПОЛЕ ЧУДЕС ===')
 def end_game(record, start_time):
     with open('data/records.txt') as file:
             c = file.readline()
@@ -15,7 +11,7 @@ def end_game(record, start_time):
     print(f'Игра вавершена!\n' \
     f'Угадано слов: {record} из 15\n' \
     f'Время игры: {timee(int(end_time - start_time))} \n' \
-    f'Ваш лучший рекорд: {c}'
+    f'🏆 Ваш лучший рекорд: {record} слов'
     )
 def start_game():
     start_time = time.time()
@@ -94,5 +90,6 @@ def save_record(record):
         with open('data/records.txt', mode='w', encoding='utf8') as file:
             file.write(str(record))
         print('Ваш рекорд сохранён/обновлён!')
+
 
 start_game()
