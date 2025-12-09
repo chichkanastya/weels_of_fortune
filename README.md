@@ -1,4 +1,4 @@
-##__Wheel of Fortune__
+## Wheel of Fortune
 
 <div align="center">
 
