@@ -8,13 +8,17 @@ def end_game(record, start_time):
     with open('data/records.txt') as file:
             c = file.readline()
     end_time = time.time()
-    print(f'Игра вавершена!\n' \
+    print(f'💔 ИГРА ОКОНЧЕНА! 💔\n' \
     f'Угадано слов: {record} из 15\n' \
+    "Вы неверно назвали слово.
+    "Загаданное слово было: {word.upper()}
     f'Время игры: {timee(int(end_time - start_time))} \n' \
     f'🏆 Ваш лучший рекорд: {record} слов'
     )
 def start_game():
     start_time = time.time()
+     record = load_record()
+    print(f"🏆 Ваш лучший рекорд: {record} слов"
     word = get_random_word("data/words.txt")
     guessed_letters = set()
     record = 0
@@ -93,3 +97,4 @@ def save_record(record):
 
 
 start_game()
+
